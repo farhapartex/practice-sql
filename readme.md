@@ -2,6 +2,14 @@
 
 Used Database: PostgreSQL
 
+### Instruction to practice on Ubuntu console:
+
+Run below commands to practice queries
+* `sudo su postgres`
+* `psql`
+* Run sql commands now
+
+
 ### Topics
 
 * Create Database
