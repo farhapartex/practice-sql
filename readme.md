@@ -10,6 +10,15 @@ Run below commands to practice queries
 * Run sql commands now
 
 
+
+### Tutorial I followed:
+
+* https://www.postgresql.org/docs/9.1/index.html
+* https://www.sqltutorial.org/
+* https://www.postgresqltutorial.com/postgresql-getting-started/
+
+
 ### Topics
 
 * Create Database
+* Create Table

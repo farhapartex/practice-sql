@@ -1,3 +1,13 @@
 ## Create a Database
 
-`CREATE DATABASE practice WITH OWNER = devadmin ENCODING = 'UTF8' CONNECTION LIMIT = -1;`
+Here I first created a used called `devadmin` and then did below operation
+
+* `CREATE DATABASE practice WITH OWNER = devadmin ENCODING = 'UTF8' CONNECTION LIMIT = -1;`
+
+#### OR
+
+* `CREATE DATABASE practice`
+* `GRANT ALL PRIVILEGES ON DATABASE practice TO devadmin;`
+
+Now run following command to move to `practice` database
+* \c practice
