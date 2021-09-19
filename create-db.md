@@ -1,6 +1,6 @@
 ## Create a Database
 
-Here I first created a used called `devadmin` and then did below operation
+Here I first created a user called `devadmin` and then did below operation
 
 * `CREATE DATABASE practice WITH OWNER = devadmin ENCODING = 'UTF8' CONNECTION LIMIT = -1;`
 
