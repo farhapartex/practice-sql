@@ -64,6 +64,11 @@ RETURNING id, username;
 ```
  id | username  
 ----+-----------
-  6 | devadmin2
-(1 row)
+  6 | david
+----+-----------
+  7 | jhon_doe
+----+-----------
+  8 | stive008
+----+-----------
+(3 rows)
 ```
