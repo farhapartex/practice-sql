@@ -55,6 +55,7 @@ By the above command a table called app_user will be created, but this have a dr
 * Drop the table first by `DROP TABLE app_user;`
 * Add a sequence by `CREATE SEQUENCE app_user_id;`
 * Now run the below updated create table command 
+
 ```
 CREATE TABLE IF NOT EXISTS app_user (
 	id bigint NOT NULL DEFAULT nextval('app_user_id'),
@@ -68,6 +69,46 @@ CREATE TABLE IF NOT EXISTS app_user (
 
 ALTER TABLE app_user OWNER to devadmin;
 ```
+
 * Now alter the SEQUENCE Owner by `ALTER SEQUENCE app_user_id OWNED BY app_user.id;`
 
-Now when you use the INSERT command you need to add id value.
+Now when you use the INSERT command you need not to add id value manually.
+
+##### If you want to DROP table before just create do like below:
+
+```
+DROP TABLE IF EXISTS app_user;
+
+CREATE TABLE IF NOT EXISTS app_user (
+	id bigint NOT NULL DEFAULT nextval('app_user_id'),
+	username VARCHAR ( 50 ) UNIQUE NOT NULL,
+	password VARCHAR ( 50 ) NOT NULL,
+	email VARCHAR ( 255 ) UNIQUE NOT NULL,
+	created_on TIMESTAMP NOT NULL,
+    last_login TIMESTAMP,
+    PRIMARY KEY (id) 
+);
+
+ALTER TABLE app_user OWNER to devadmin;
+```
+
+
+##### Create Table another way
+
+To add a sequence, then create a table and then link them are huge work, right? So you can do the same above thing by using below style:
+
+```
+DROP TABLE IF EXISTS app_user;
+
+CREATE TABLE IF NOT EXISTS app_user (
+	id SERIAL PRIMARY KEY,
+	username VARCHAR ( 50 ) UNIQUE NOT NULL,
+	password VARCHAR ( 50 ) NOT NULL,
+	email VARCHAR ( 255 ) UNIQUE NOT NULL,
+	created_on TIMESTAMP NOT NULL,
+    last_login TIMESTAMP
+);
+
+```
+
+*** When you use SERIAL, the data type of id will be integer.

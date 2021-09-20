@@ -45,3 +45,25 @@ VALUES
     (value_list_n)
 RETURNING * | output_expression;
 ```
+
+#### Example:
+
+```
+
+INSERT INTO app_user(username, email, name, created_at) 
+VALUES
+('david', 'david@gmail.com', 'David Moore', '2021-09-20 06:56:20.022758'),
+('jhon_doe', 'jhon.doe@gmail.com', 'Jhon Doe', '2021-09-20 06:56:20.022758'),
+('stive008', 'stive.jhon@example.com', 'Jhon Stive', '2021-09-20 06:56:20.022758');
+
+RETURNING id, username;
+```
+
+#### Output:
+
+```
+ id | username  
+----+-----------
+  6 | devadmin2
+(1 row)
+```
