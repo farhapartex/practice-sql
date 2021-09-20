@@ -47,3 +47,27 @@ CREATE TABLE IF NOT EXISTS app_user (
 
 ALTER TABLE app_user OWNER to devadmin;
 ```
+
+#### Now read this carefully 
+
+By the above command a table called app_user will be created, but this have a drawback. When you will run INSERT command to add data to rows, you have to manually add the id (primary key), but the idle case would that, it should increase by itself when someone inseart a new row. For that we can follow bellow approch by adding a sequence:
+
+* Drop the table first by `DROP TABLE app_user;`
+* Add a sequence by `CREATE SEQUENCE app_user_id;`
+* Now run the below updated create table command 
+```
+CREATE TABLE IF NOT EXISTS app_user (
+	id bigint NOT NULL DEFAULT nextval('app_user_id'),
+	username VARCHAR ( 50 ) UNIQUE NOT NULL,
+	password VARCHAR ( 50 ) NOT NULL,
+	email VARCHAR ( 255 ) UNIQUE NOT NULL,
+	created_on TIMESTAMP NOT NULL,
+    last_login TIMESTAMP,
+    PRIMARY KEY (id) 
+);
+
+ALTER TABLE app_user OWNER to devadmin;
+```
+* Now alter the SEQUENCE Owner by `ALTER SEQUENCE app_user_id OWNED BY app_user.id;`
+
+Now when you use the INSERT command you need to add id value.
