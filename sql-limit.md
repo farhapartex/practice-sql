@@ -61,3 +61,20 @@ id | username  |        email        |      name       |         created_at
   3 | farzana   | niloy@gmail.com     | Farzana Yesmin  | 2021-09-20 06:56:20.022758
 (3 rows
 ```
+
+
+#### OFFSET Clause
+
+To skip first two rows and get the next three rows, you use both LIMIT and OFFSET clauses as shown in the following statement.
+```
+SELECT * FROM app_user LIMIT 3 OFFSET 2;
+```
+
+```
+ id |  username   |         email          |      name      |         created_at         
+----+-------------+------------------------+----------------+----------------------------
+  3 | farzana     | niloy@gmail.com        | Farzana Yesmin | 2021-09-20 06:56:20.022758
+  4 | hasan08sust | nazmul.hasan@gmail.com | Nazmul Hasan   | 2021-09-20 06:56:20.022758
+  5 | salma       | salma.ummay@gmail.com  | Ummay Salma    | 2021-09-20 06:56:20.022758
+(3 rows)
+```
