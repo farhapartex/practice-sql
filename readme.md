@@ -47,3 +47,8 @@ Run below commands to practice queries
 
 * Create Database
 * Create Table
+* Insert Query
+* General SELECT query
+* SQL-DISTINCT
+* SQL-ORDER-BY
+* SQL-LIMIT
